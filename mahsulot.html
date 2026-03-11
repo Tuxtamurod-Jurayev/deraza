@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CRM - Mahsulot</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body data-page="mahsulot">
+  <main class="container">
+    <header class="topbar card auth-required hidden">
+      <div>
+        <h1>Mahsulot bo'limi</h1>
+        <p class="hint">Mahsulot CRUD va ombor nazorati</p>
+      </div>
+      <div class="topbar-actions">
+        <nav class="nav">
+          <a href="/index" data-nav="index">
+            <svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5m6 14V9m6 10V13m6 6V7"/></svg>
+            <span>Dashboard</span>
+          </a>
+          <a href="/sotuv" data-nav="sotuv">
+            <svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.5h7.8a2 2 0 0 0 2-1.6L21 7H8"/><circle cx="10" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/></svg>
+            <span>Sotuv</span>
+          </a>
+          <a href="/chiqim" data-nav="chiqim">
+            <svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v10H3z"/><path d="M3 11h18"/><circle cx="8" cy="16" r="1.3"/></svg>
+            <span>Chiqim</span>
+          </a>
+          <a href="/mahsulot" data-nav="mahsulot">
+            <svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4-8 4-8-4 8-4z"/><path d="m4 7 8 4 8-4"/><path d="M4 7v10l8 4 8-4V7"/></svg>
+            <span>Mahsulot</span>
+          </a>
+        </nav>
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="Tema almashtirish" title="Tema">
+          <span id="themeIcon">&#9728;</span>
+        </button>
+        <button id="logoutBtn" class="btn logout-btn">
+          <svg class="btn-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/><path d="M14 3h5v18h-5"/></svg>
+          <span>Chiqish</span>
+        </button>
+      </div>
+    </header>
+
+    <section id="loginSection" class="card login-section">
+      <h2>Admin kirish</h2>
+      <form id="loginForm" class="grid">
+        <label>Login <input name="username" required value="admin"></label>
+        <label>Parol <input name="password" type="password" required value="admin123"></label>
+        <button type="submit" class="btn">Kirish</button>
+      </form>
+    </section>
+
+    <section id="productSection" class="auth-required hidden">
+      <article class="card">
+        <h3>Mahsulotlar jadvali</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Nomi</th>
+                <th>Qoldiq</th>
+                <th>Birlik</th>
+                <th>O'rtacha tannarx</th>
+                <th>Ombor qiymati</th>
+                <th>Amal</th>
+              </tr>
+            </thead>
+            <tbody id="stockTable"></tbody>
+          </table>
+        </div>
+      </article>
+
+      <div class="center-action-wrap">
+        <button id="productToggleBtn" class="btn" type="button">Mahsulot qo'shish</button>
+      </div>
+
+      <article id="productFormCard" class="card narrow hidden">
+        <h3>Yangi mahsulot</h3>
+        <form id="productForm" class="grid">
+          <label>
+            Mahsulot turi
+            <select id="productType" name="product_type" required>
+              <option value="">Tanlang</option>
+              <option value="eshik">Eshik</option>
+              <option value="deraza">Deraza</option>
+              <option value="padagolnik">Padagolnik</option>
+              <option value="portichka">Portichka</option>
+              <option value="pena">Pena</option>
+            </select>
+          </label>
+
+          <label id="colorGroup" class="hidden">
+            Rangi
+            <select id="productColor" name="color">
+              <option value="">Tanlang</option>
+              <option value="oq">Oq</option>
+              <option value="karishniviy">Karishniviy</option>
+            </select>
+          </label>
+
+          <label id="sizeGroup" class="hidden">
+            <span id="sizeLabelText">O'lchami</span>
+            <select id="productSize" name="size">
+              <option value="">Tanlang</option>
+            </select>
+          </label>
+
+          <label id="priceGroup">
+            <span id="priceLabelText">Summa</span>
+            <input id="incomingPriceInput" name="incoming_price" type="number" min="0" step="0.01" required>
+          </label>
+          <label id="qtyGroup">
+            <span id="qtyLabelText">Soni</span>
+            <input id="incomingQtyInput" name="incoming_qty" type="number" min="0.01" step="0.01" required>
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn">Saqlash</button>
+            <button id="productCancelBtn" type="button" class="btn ghost">Bekor qilish</button>
+          </div>
+        </form>
+      </article>
+    </section>
+  </main>
+  <div id="toast" class="toast hidden"></div>
+  <script src="/assets/app.js"></script>
+</body>
+</html>
