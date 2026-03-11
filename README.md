@@ -1,0 +1,2 @@
+# deraza
+Abbos uchun tayyorlangan
