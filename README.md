@@ -1,6 +1,6 @@
 # Eshik-Deraza CRM (MVP)
 
-Bu loyiha eshik-deraza savdo bo'limi uchun oddiy CRM:
+Bu loyiha eshik-deraza savdo bo'limi uchun CRM tizimi.
 
 - Admin login
 - Mahsulot qo'shish
@@ -13,38 +13,32 @@ Bu loyiha eshik-deraza savdo bo'limi uchun oddiy CRM:
 - Sotuv/Chiqim/Mahsulot jadvallarida CRUD (`qo'shish`, `tahrirlash`, `o'chirish`)
 - Qo'shish formalari alohida markaziy tugma orqali ochiladi
 - Light/Dark tema (`sun/night`) tugmasi
-- Ko'p sahifali bo'limlar:
-  - `/index` - Dashboard
-  - `/sotuv` - Sotuv bo'limi
-  - `/chiqim` - Chiqim bo'limi
-  - `/mahsulot` - Mahsulot bo'limi
-- Dashboard:
-  - Kirim
-  - Chiqim (faqat `chiqim` bo'limida kiritilgan xarajatlar yig'indisi)
-  - Sof foyda
-  - Jami xarid
-  - Ombordagi qolgan tovarlar
+
+## Bo'limlar
+
+- `/index` - Dashboard
+- `/sotuv` - Sotuv bo'limi
+- `/chiqim` - Chiqim bo'limi
+- `/mahsulot` - Mahsulot bo'limi
+
+Dashboard ko'rsatkichlari:
+- Kirim
+- Chiqim (faqat `chiqim` bo'limida kiritilgan xarajatlar yig'indisi)
+- Sof foyda
+- Jami xarid
+- Ombordagi qolgan tovarlar
 
 ## Ishga tushirish
 
-1. Loyihaga kiring:
-
 ```powershell
 cd c:\Users\Zevs\Desktop\lesssons\04.03
-```
-
-2. Serverni ishga tushiring:
-
-```powershell
 python app.py
 ```
 
-3. Brauzerda oching:
+Brauzer:
+- `http://localhost:8080`
 
-`http://localhost:8080`
-
-## Login
-
+Login:
 - Username: `admin`
 - Password: `admin123`
 
